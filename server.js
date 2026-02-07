@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+
 
 
 dotenv.config();
@@ -20,6 +22,8 @@ app.use(express.json());
 app.use("/api", productRoutes);
 // auth routes
 app.use("/api", authRoutes);
+// cart routes
+app.use("/api", cartRoutes);
 
 // Test route
 app.get("/", (req, res) => {
